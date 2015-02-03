@@ -11,8 +11,8 @@ class AutoFollower < MicroBlogger
 	end
 
 	def unfollowLast(amount)
-		favorites = @client.favorites
-		favorites.reverse.each do |tweet|
+		favorites = @client.favorites(count: amount) #max of 100
+		favorites.each do |tweet|
 			@client.unfavorite(tweet)
 		end
 	end
