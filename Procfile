@@ -1,1 +1,1 @@
-worker: ruby ./mail_checker.rb
+worker: bundle exec ruby ./script.rb
